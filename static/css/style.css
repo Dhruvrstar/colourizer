@@ -1,0 +1,235 @@
+:root {
+  /* Color variables (adjust as needed) */
+  --primary: #6366f1;
+  --primary-hover: #4f46e5;
+  --text: #1e293b;
+  --error: #dc2626;
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body (optional background if you like) */
+body {
+  font-family: 'Inter', sans-serif;
+  background: #f8fafc; /* or remove if you prefer a different BG */
+}
+
+/* HERO SECTION */
+.hero {
+  background: var(--primary);
+  color: #fff;
+  text-align: center;
+  padding: 3rem 2rem;
+}
+
+/* Subtitle styling */
+.subtitle {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+/* DRAG & DROP AREA */
+.upload-container {
+  border: 2px dashed rgba(255, 255, 255, 0.4);
+  border-radius: 1rem;
+  padding: 2rem;
+  margin: 0 auto 2rem;
+  max-width: 500px;
+  background: rgba(255, 255, 255, 0.1);
+  transition: border-color 0.3s ease;
+}
+
+.upload-container:hover {
+  border-color: #fff;
+}
+
+.drag-text {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.browse-link {
+  color: #fff;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.formats-text {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Progress Bar */
+.progress-bar {
+  display: none;
+  background: rgba(255, 255, 255, 0.2);
+  height: 6px;
+  border-radius: 3px;
+  margin-top: 1rem;
+  overflow: hidden;
+}
+
+.progress-fill {
+  width: 0%;
+  height: 100%;
+  background: #fff;
+  transition: width 0.3s ease;
+}
+
+/* IMAGE COMPARISON */
+.image-comparison {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.image-card {
+  /* Dashed boundary similar to .upload-container */
+  border: 2px dashed rgba(255, 255, 255, 0.4);
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  
+  /* Some padding so image + text fit nicely */
+  padding: 2rem;
+  text-align: center;
+  max-width: 500px; 
+  transition: border-color 0.3s ease;
+}
+
+.image-card:hover {
+  border-color: #fff;
+}
+
+.image-card h3 {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+/* The images themselves */
+.preview-image {
+  display: none;    /* Hidden until user uploads */
+  width: 100%;      /* Fill the card's width */
+  height: auto;     /* Preserve aspect ratio */
+  max-width: 500px;
+  box-shadow: var(--shadow);
+}
+
+/* DOWNLOAD BUTTON */
+.button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  margin-bottom: 2rem;
+}
+
+.button.primary {
+  background: #fff;
+  color: var(--primary);
+  transition: transform 0.3s ease;
+}
+
+.button.primary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+/* STATUS AREA */
+.status-container {
+  min-height: 40px;
+  margin-top: 1rem;
+}
+
+.loading {
+  display: none;
+  align-items: center;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.spinner {
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid #fff;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-text {
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.error {
+  display: none;
+  color: #fff;
+  font-weight: 600;
+  margin-top: 1rem;
+}
+
+/* FEATURES SECTION: Single row, same size boxes */
+.features {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: nowrap;    /* Prevent wrapping; one line only */
+  gap: 1rem;
+  overflow-x: auto;     /* Scroll horizontally if the screen is too narrow */
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.feature-card {
+  background: #fff;
+  color: var(--text);
+  flex: 0 0 300px;        /* All cards are 300px wide */
+  min-height: 200px;      /* Ensure consistent height if content differs */
+  border-radius: 0.75rem;
+  box-shadow: var(--shadow);
+  text-align: center;
+  padding: 2rem;
+  margin: 1rem 0;         /* Top/bottom margin */
+  transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+}
+
+.feature-card h3 {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+/* RESPONSIVE ADJUSTMENTS */
+@media (max-width: 768px) {
+  /* If you actually WANT them stacked on mobile,
+     remove "flex-wrap: nowrap;" or override it here. 
+     But for your request, we keep single line with scroll. */
+  
+  .image-comparison {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .image-card {
+    max-width: 90%;
+  }
+}

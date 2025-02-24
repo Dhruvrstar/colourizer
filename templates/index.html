@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>AI Image Colorizer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="/static/css/style.css" />
+</head>
+<body>
+
+  <!-- HERO SECTION -->
+  <div class="hero">
+    <h1>AI Image Colorizer</h1>
+    <p class="subtitle">Bring your black & white photos to life</p>
+
+    <!-- DRAG & DROP AREA -->
+    <div class="upload-container" id="dropZone">
+      <input type="file" id="fileInput" accept="image/*" hidden />
+      <div id="uploadText">
+        <p class="drag-text">Drag & drop or <span class="browse-link">browse files</span></p>
+        <p class="formats-text">Supported formats: JPG, PNG, JPEG (Max 5MB)</p>
+      </div>
+      <div class="progress-bar" id="progressBar">
+        <div class="progress-fill"></div>
+      </div>
+    </div>
+
+    <!-- SIDE-BY-SIDE IMAGE PREVIEWS -->
+    <div class="image-comparison">
+      <div class="image-card">
+        <h3>Original Image</h3>
+        <img id="originalPreview" class="preview-image" alt="Original Preview" />
+      </div>
+      <div class="image-card">
+        <h3>Colorized Result</h3>
+        <img id="colorizedPreview" class="preview-image" alt="Colorized Preview" />
+      </div>
+    </div>
+
+    <!-- DOWNLOAD BUTTON -->
+    <a class="button primary hidden" id="downloadBtn" download>
+      Download Colorized Image
+    </a>
+
+    <!-- STATUS / LOADING / ERROR -->
+    <div class="status-container">
+      <div class="loading" id="loading">
+        <div class="spinner"></div>
+        <span class="loading-text">Working magic...</span>
+      </div>
+      <div class="error" id="error"></div>
+    </div>
+  </div>
+  <!-- /HERO SECTION -->
+
+  <!-- FEATURE CARDS (3 in one line, same size) -->
+  <div class="features">
+    <div class="feature-card">
+      <h3>🎨 AI-Powered Colorization</h3>
+      <p>Advanced deep learning models for accurate color restoration</p>
+    </div>
+    <div class="feature-card">
+      <h3>⚡ Instant Processing</h3>
+      <p>Get results in seconds with optimized algorithms</p>
+    </div>
+    <div class="feature-card">
+      <h3>📸 High Quality Output</h3>
+      <p>Preserve details while adding natural colors</p>
+    </div>
+  </div>
+  <!-- /FEATURE CARDS -->
+
+  <!-- Your existing JS file -->
+  <script src="/static/js/main.js"></script>
+</body>
+</html>
