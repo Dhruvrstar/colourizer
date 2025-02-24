@@ -51,7 +51,7 @@ Google Drive Link **https://drive.google.com/drive/folders/1rBdnuaAbUqv4t8N4aFER
 
 Once downloaded, place them in the model folder. The final structure might look like:
 
-'''
+```plaintext
 image-colorizer/
 ├─ model/
 │   ├─ colorization_deploy_v2.prototxt
@@ -70,7 +70,8 @@ image-colorizer/
 ├─ colorizer.py
 ├─ README.md
 └─ requirements.txt
-'''
+```
+
 
 
 ## Usage
